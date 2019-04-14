@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--导入属性配置 -->
+    <properties resource="generator.properties"></properties>
+
+    <classPathEntry
+            location="${jdbc.driverLocation}"/>
+
+    <context id="MySqlTables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="javaFileEncoding" value="UTF-8"/>
+            <property name="suppressAllComments" value="true"/><!-- 是否取消注释 -->
+            <property name="suppressDate" value="false"/> <!-- 是否生成注释代时间戳-->
+            <property name="useActualColumnNames" value="false"/>
+        </commentGenerator>
+
+        <!--配置数据库链接 -->
+        <jdbcConnection driverClass="${jdbc.driverClass}"
+                        connectionURL="${jdbc.connectionURL}"
+                        userId="${jdbc.username}" password="${jdbc.password}">
+            <!-- 针对mysql数据库 -->
+            <property name="useInformationSchema" value="true"></property>
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!--配置实体bean -->
+        <javaModelGenerator targetPackage="cc.kevinlu.quartz.model"
+                            targetProject="${project.dir}/src/main/java">
+            <property name="enableSubPackages" value="false"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!--配置实体bean的sql.xml -->
+        <sqlMapGenerator targetPackage="mybatis.mapper"
+                         targetProject="${project.dir}/src/main/resources">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <!--配置实体map接口（dao） -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="cc.kevinlu.quartz.mapper"
+                             targetProject="${project.dir}/src/main/java">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+
+        <table tableName="task_record" domainObjectName="TaskRecordDO" mapperName="TaskRecordMapper"
+               enableCountByExample="true" enableUpdateByExample="false"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+    </context>
+</generatorConfiguration>

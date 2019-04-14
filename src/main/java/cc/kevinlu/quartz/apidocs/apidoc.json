@@ -1,0 +1,13 @@
+{
+  "name": "yd-quartz",
+  "version": "1.0.0",
+  "description": "翊点调度任务管理接口文档",
+  "apidoc": {
+    "title": "翊点调度任务管理接口文档",
+    "url": "https://api.github.com/v1"
+  },
+  "header": {
+    "title": "错误码定义",
+    "filename": "header.md"
+  }
+}
