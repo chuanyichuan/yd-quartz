@@ -5,8 +5,7 @@ spring:
   application:
     name: yd-quartz
   datasource:
-    url: jdbc:mysql://106.12.85.92:3306/yd_jobtask?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&verifyServerCertificate=false&autoReconnct=true&autoReconnectForPools=true&allowMultiQueries=true
-    #    url: jdbc:mysql://localhost:3306/yd_jobtask?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&verifyServerCertificate=false&autoReconnct=true&autoReconnectForPools=true&allowMultiQueries=true
+    url: jdbc:mysql://localhost:3306/yd_jobtask?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&verifyServerCertificate=false&autoReconnct=true&autoReconnectForPools=true&allowMultiQueries=true
     username: root
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
